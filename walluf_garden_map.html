@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d29c2a3d9cd2e37c6a1bbd71917e7132 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<style>
+    .leaflet-container {
+        background: #C8DCCC !important;
+    }
+    .leaflet-control-attribution {
+        background: rgba(200, 220, 204, 0.7) !important;
+        color: #3A3A3A !important;
+        font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+        font-size: 10px !important;
+    }
+    .leaflet-control-attribution a {
+        color: #B5A88A !important;
+    }
+    .leaflet-control-zoom a {
+        background-color: #FFFFFF !important;
+        color: #3A3A3A !important;
+        border-color: #8FAF93 !important;
+    }
+    .leaflet-control-zoom a:hover {
+        background-color: #C8DCCC !important;
+    }
+    .leaflet-popup-content-wrapper {
+        border-radius: 4px !important;
+        box-shadow: 0 3px 14px rgba(0,0,0,0.1) !important;
+        border: 1px solid #8FAF93 !important;
+    }
+</style>
+    
+    <div style="
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+    ">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=50.039483,8.163144&waypoints=50.03756,8.164225&travelmode=driving" target="_blank" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: #3A3A3A;
+            color: #FFFFFF;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            text-decoration: none;
+            border-radius: 6px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            transition: background 0.2s ease, transform 0.15s ease;
+        "
+        onmouseover="this.style.background='#B5A88A'; this.style.transform='scale(1.03)';"
+        onmouseout="this.style.background='#3A3A3A'; this.style.transform='scale(1)';"
+        >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+            </svg>
+            Route zu Unser Garten
+        </a>
+    </div>
+    
+    
+            <div class="folium-map" id="map_d29c2a3d9cd2e37c6a1bbd71917e7132" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d29c2a3d9cd2e37c6a1bbd71917e7132 = L.map(
+                "map_d29c2a3d9cd2e37c6a1bbd71917e7132",
+                {
+                    center: [50.0385215, 8.1636845],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7201f0cd270b90b15dab43e91257daed = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://carto.com/\"\u003eCARTO\u003c/a\u003e \u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOSM\u003c/a\u003e",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7201f0cd270b90b15dab43e91257daed.addTo(map_d29c2a3d9cd2e37c6a1bbd71917e7132);
+        
+    
+            map_d29c2a3d9cd2e37c6a1bbd71917e7132.fitBounds(
+                [[50.03756, 8.163144], [50.039483, 8.164225]],
+                {"padding": [50, 50]}
+            );
+        
+    
+            var marker_62fa32f80bfd4098c33bff3341ae2afd = L.marker(
+                [50.03756, 8.164225],
+                {
+}
+            ).addTo(map_d29c2a3d9cd2e37c6a1bbd71917e7132);
+        
+    
+            var div_icon_83e53f1631b5fc79b6327f0cf03dac9f = L.divIcon({
+  "html": "\n    \u003cdiv style=\"\n        display:flex; align-items:center; justify-content:center;\n        width:36px; height:36px; border-radius:50%;\n        background:#3A3A3A; border:3px solid #FFFFFF;\n        box-shadow:0 2px 8px rgba(0,0,0,0.15);\n        color:#FFFFFF; font-size:16px;\n    \"\u003e\u003ci class=\"fa fa-car\"\u003e\u003c/i\u003e\u003c/div\u003e\n    ",
+  "iconSize": [36, 36],
+  "iconAnchor": [18, 18],
+  "className": "empty",
+});
+        
+    
+        var popup_04a2188eb13f0415bcbc04a363f24dd4 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var i_frame_fe4ba05325ef9e6f448d3767d68d4a88 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IgogICAgICAgIGZvbnQtZmFtaWx5OiAnU2Vnb2UgVUknLCAnSGVsdmV0aWNhIE5ldWUnLCBBcmlhbCwgc2Fucy1zZXJpZjsKICAgICAgICBmb250LXNpemU6IDE0cHg7IHdpZHRoOiAyNDBweDsgcGFkZGluZzogNHB4OwogICAgIj4KICAgICAgICA8aDQgc3R5bGU9Im1hcmdpbjowIDAgNnB4IDA7IGNvbG9yOiMzQTNBM0E7IGZvbnQtd2VpZ2h0OjgwMDsKICAgICAgICAgICAgZm9udC1zaXplOjE1cHg7IHRleHQtdHJhbnNmb3JtOnVwcGVyY2FzZTsgbGV0dGVyLXNwYWNpbmc6MC41cHg7Ij4KICAgICAgICAgICAgUGFya3BsYXR6IEpvaGFubmlzZmVsZDwvaDQ+CiAgICAgICAgPHAgc3R5bGU9Im1hcmdpbjowOyBjb2xvcjojQjVBODhBOyBmb250LXNpemU6MTNweDsgZm9udC13ZWlnaHQ6NjAwOyI+CiAgICAgICAgICAgIDwvcD4KICAgIDwvZGl2PgogICAg" width="260" style="border:none !important;" height="100"></iframe>`)[0];
+                popup_04a2188eb13f0415bcbc04a363f24dd4.setContent(i_frame_fe4ba05325ef9e6f448d3767d68d4a88);
+            
+        
+
+        marker_62fa32f80bfd4098c33bff3341ae2afd.bindPopup(popup_04a2188eb13f0415bcbc04a363f24dd4)
+        ;
+
+        
+    
+    
+            marker_62fa32f80bfd4098c33bff3341ae2afd.bindTooltip(
+                `<div>
+                     Parkplatz Johannisfeld
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_62fa32f80bfd4098c33bff3341ae2afd.setIcon(div_icon_83e53f1631b5fc79b6327f0cf03dac9f);
+            
+    
+            var marker_343739414dc2f59c166a120a78ae6132 = L.marker(
+                [50.03756, 8.164225],
+                {
+}
+            ).addTo(map_d29c2a3d9cd2e37c6a1bbd71917e7132);
+        
+    
+            var div_icon_d667d58678f678ef0edf1f79101cfe16 = L.divIcon({
+  "html": "\n    \u003cdiv style=\"\n        font-family: \u0027Segoe UI\u0027, \u0027Helvetica Neue\u0027, Arial, sans-serif;\n        font-size: 14px;\n        color: #3A3A3A;\n        font-weight: 800;\n        white-space: nowrap;\n        text-transform: uppercase;\n        letter-spacing: 0.5px;\n        text-shadow:\n            1px 1px 3px rgba(255,255,255,0.95),\n            -1px -1px 3px rgba(255,255,255,0.95),\n            0 0 8px rgba(255,255,255,0.8);\n        line-height: 1.4;\n    \"\u003e\n        \u003cdiv\u003eParkplatz Johannisfeld\u003c/div\u003e\n        \n    \u003c/div\u003e\n    ",
+  "iconSize": [250, 40],
+  "iconAnchor": [-22, 20],
+  "className": "empty",
+});
+        
+    
+                marker_343739414dc2f59c166a120a78ae6132.setIcon(div_icon_d667d58678f678ef0edf1f79101cfe16);
+            
+    
+            var marker_0cc20b7f270d6ef312e3fff5a6c6c407 = L.marker(
+                [50.039483, 8.163144],
+                {
+}
+            ).addTo(map_d29c2a3d9cd2e37c6a1bbd71917e7132);
+        
+    
+            var div_icon_672ef33d80e1be8af7789d64266869f6 = L.divIcon({
+  "html": "\n    \u003cdiv style=\"\n        display:flex; align-items:center; justify-content:center;\n        width:36px; height:36px; border-radius:50%;\n        background:#3A3A3A; border:3px solid #FFFFFF;\n        box-shadow:0 2px 8px rgba(0,0,0,0.15);\n        color:#FFFFFF; font-size:16px;\n    \"\u003e\u003ci class=\"fa fa-champagne-glasses\"\u003e\u003c/i\u003e\u003c/div\u003e\n    ",
+  "iconSize": [36, 36],
+  "iconAnchor": [18, 18],
+  "className": "empty",
+});
+        
+    
+        var popup_9175c3ec412d05ca798fbfbde0091741 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var i_frame_108509c631de56169fd47070fde592a2 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IgogICAgICAgIGZvbnQtZmFtaWx5OiAnU2Vnb2UgVUknLCAnSGVsdmV0aWNhIE5ldWUnLCBBcmlhbCwgc2Fucy1zZXJpZjsKICAgICAgICBmb250LXNpemU6IDE0cHg7IHdpZHRoOiAyNDBweDsgcGFkZGluZzogNHB4OwogICAgIj4KICAgICAgICA8aDQgc3R5bGU9Im1hcmdpbjowIDAgNnB4IDA7IGNvbG9yOiMzQTNBM0E7IGZvbnQtd2VpZ2h0OjgwMDsKICAgICAgICAgICAgZm9udC1zaXplOjE1cHg7IHRleHQtdHJhbnNmb3JtOnVwcGVyY2FzZTsgbGV0dGVyLXNwYWNpbmc6MC41cHg7Ij4KICAgICAgICAgICAgVW5zZXIgR2FydGVuPC9oND4KICAgICAgICA8cCBzdHlsZT0ibWFyZ2luOjA7IGNvbG9yOiNCNUE4OEE7IGZvbnQtc2l6ZToxM3B4OyBmb250LXdlaWdodDo2MDA7Ij4KICAgICAgICAgICAgR2FydGVuZmVpZXIgMDguMDguPC9wPgogICAgPC9kaXY+CiAgICA=" width="260" style="border:none !important;" height="100"></iframe>`)[0];
+                popup_9175c3ec412d05ca798fbfbde0091741.setContent(i_frame_108509c631de56169fd47070fde592a2);
+            
+        
+
+        marker_0cc20b7f270d6ef312e3fff5a6c6c407.bindPopup(popup_9175c3ec412d05ca798fbfbde0091741)
+        ;
+
+        
+    
+    
+            marker_0cc20b7f270d6ef312e3fff5a6c6c407.bindTooltip(
+                `<div>
+                     Unser Garten
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0cc20b7f270d6ef312e3fff5a6c6c407.setIcon(div_icon_672ef33d80e1be8af7789d64266869f6);
+            
+    
+            var marker_f4b09b2c8544c34a234e5aa8b8e32c44 = L.marker(
+                [50.039483, 8.163144],
+                {
+}
+            ).addTo(map_d29c2a3d9cd2e37c6a1bbd71917e7132);
+        
+    
+            var div_icon_530f5f3ed9e25a43d559294ff36eb1bd = L.divIcon({
+  "html": "\n    \u003cdiv style=\"\n        font-family: \u0027Segoe UI\u0027, \u0027Helvetica Neue\u0027, Arial, sans-serif;\n        font-size: 14px;\n        color: #3A3A3A;\n        font-weight: 800;\n        white-space: nowrap;\n        text-transform: uppercase;\n        letter-spacing: 0.5px;\n        text-shadow:\n            1px 1px 3px rgba(255,255,255,0.95),\n            -1px -1px 3px rgba(255,255,255,0.95),\n            0 0 8px rgba(255,255,255,0.8);\n        line-height: 1.4;\n    \"\u003e\n        \u003cdiv\u003eUnser Garten\u003c/div\u003e\n        \u003cdiv style=\"\n            font-size:12px; color:#B5A88A; font-weight:700;\n            text-transform:none; letter-spacing:0;\n        \"\u003eGartenfeier 08.08.\u003c/div\u003e\n    \u003c/div\u003e\n    ",
+  "iconSize": [250, 40],
+  "iconAnchor": [-22, 20],
+  "className": "empty",
+});
+        
+    
+                marker_f4b09b2c8544c34a234e5aa8b8e32c44.setIcon(div_icon_530f5f3ed9e25a43d559294ff36eb1bd);
+            
+</script>
+</html>
